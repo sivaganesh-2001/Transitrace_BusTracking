@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1046136626817",
+    "project_id": "transitrace-e6a39",
+    "storage_bucket": "transitrace-e6a39.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046136626817:android:6b4a3e6adfa751aca6b780",
+        "android_client_info": {
+          "package_name": "com.example.transitrace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCnhzDFPOE3O18-V6jGm8G0YKyeByC6cA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

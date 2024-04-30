@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Transitrace"
+        tools:targetApi="31">
+        <activity
+            android:name=".DriverSelectedBusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EmergencySosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UserComplaintActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserEmergency"
+            android:exported="false" />
+        <activity
+            android:name=".UserFeedback"
+            android:exported="false" />
+        <activity
+            android:name=".AdminBusDeleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminBusSearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminBusUpdateActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD2SC7a2Yy3frl_92aQ1POI1QUXagOA25w" />
+
+        <activity
+            android:name=".AdminDriverSearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminManageBusListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserSelectedBusListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminDriverDeleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminDriverUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminManageDriverActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminManageUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminEmergencyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminDriverCreateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserHomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UserSignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DriverHomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DriverBusTrackSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserBusMapActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AdminHomeActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmergencySosActivity"
+    android:background="@drawable/navbar_image"
+    >
+
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="46dp"
+        android:layout_height="41dp"
+        android:src="@drawable/profile_white"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+/>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="193dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="100dp"
+        android:text="SUBMIT"
+        android:backgroundTint="@color/blue1"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="521dp" />
+
+    <EditText
+        android:id="@+id/textbox"
+        android:layout_width="276dp"
+        android:layout_height="58dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="400dp"
+        android:background="@drawable/rounded_edittext_background"
+
+        android:inputType="textMultiLine"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/accident"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="22dp"
+        android:text="Accident" />
+
+    <TextView
+        android:id="@+id/puncture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="150dp"
+        android:textSize="22dp"
+        android:text="Puncture" />
+
+    <TextView
+        android:id="@+id/breakdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="275dp"
+        android:layout_marginTop="300dp"
+        android:text="BreakDown"
+        android:textSize="22dp" />
+</RelativeLayout>

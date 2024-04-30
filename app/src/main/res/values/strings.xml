@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Project_Transitrace</string>
+    <string name="profile_icon_description">Profile</string>
+    <string name="drawer_item_home">Home</string>
+    <string name="drawer_item_feedback">Feedback</string>
+    <string name="drawer_item_dialog">dialogue</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminDriverCreateActivity"
+    android:background="@drawable/navbar_image_old">
+
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="53dp"
+        android:layout_height="110dp"
+        android:src="@drawable/profile_white"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.7" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="28dp"
+        android:layout_marginBottom="-20dp"
+        android:id="@+id/cardview"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            android:orientation="vertical"
+            android:padding="28dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register for Driver"
+                android:textColor="@color/primary"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:alpha="0.7"
+                    android:textStyle="bold"
+                    android:id="@+id/email"
+                    />
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"/>
+                <EditText
+                    android:id="@+id/etname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/textViewName1"
+                    android:layout_marginStart="16dp"
+                    android:padding="12dp"
+                    android:inputType="text"
+
+                    android:hint="Enter Your Name" />
+            </LinearLayout>
+
+
+            <View
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:alpha="0.7"
+                    android:textStyle="bold"
+                    android:id="@+id/textViewName1"
+                    />
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"/>
+                <EditText
+                    android:id="@+id/etmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/textViewName1"
+                    android:layout_marginStart="16dp"
+                    android:padding="12dp"
+                    android:inputType="textEmailAddress"
+                    android:hint="Enter Mail" />
+            </LinearLayout>
+
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID"
+                    android:alpha="0.7"
+                    android:textStyle="bold"
+                    android:id="@+id/textViewName2"
+                    />
+
+                <View
+                    android:layout_width="76dp"
+                    android:layout_height="30dp" />
+                <EditText
+                    android:id="@+id/etID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:layout_toRightOf="@id/textViewName2"
+                    android:layout_marginStart="16dp"
+                    android:inputType="text"
+                    android:hint="Enter Your ID" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone"
+                    android:alpha="0.7"
+                    android:textStyle="bold"
+                    android:id="@+id/textViewName3"
+                    />
+
+                <View
+                    android:layout_width="51dp"
+                    android:layout_height="31dp" />
+                <EditText
+                    android:id="@+id/etphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:layout_toRightOf="@id/textViewName3"
+                    android:layout_marginStart="16dp"
+                    android:inputType="phone"
+
+                    android:hint="Enter Phone Number" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DOB"
+                    android:alpha="0.7"
+                    android:textStyle="bold"
+                    android:id="@+id/textViewName4"
+                    />
+
+                <View
+                    android:layout_width="77dp"
+                    android:layout_height="31dp" />
+                <EditText
+                    android:id="@+id/etdob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/textViewName4"
+                    android:layout_marginStart="5dp"
+                    android:inputType="date"
+
+                    android:hint="Enter Date of Birth "
+                    android:padding="15dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:id="@+id/tv_doj"
+                    android:text=" DOJ"
+                    android:textStyle="bold"
+
+                    />
+
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent" />
+                <EditText
+                    android:id="@+id/et_doj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/textViewName5"
+                    android:layout_marginStart="10dp"
+                    android:inputType="date"
+                    android:hint=" Enter Date of Join"
+                    android:padding="15dp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:id="@+id/textViewName5"
+                    android:text="Password"
+                    android:textStyle="bold"
+
+                    />
+
+                <View
+                    android:layout_width="31dp"
+                    android:layout_height="32dp" />
+                <EditText
+                    android:id="@+id/etpassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/textViewName5"
+                    android:layout_marginStart="10dp"
+                    android:inputType="textPassword"
+
+                    android:hint="Type Password"
+                    android:padding="15dp"/>
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Sign Up"
+                android:id="@+id/signupbutton"
+                android:textColor="@color/white"
+                app:cornerRadius="32dp"
+                />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
