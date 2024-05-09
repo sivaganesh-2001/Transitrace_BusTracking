@@ -23,8 +23,8 @@ class DriverHomeActivity : AppCompatActivity() {
         resetButton = findViewById(R.id.buttonReset)
 
         trackButton.setOnClickListener {
-            val from = fromEditText.text.toString().trim()
-            val to = toEditText.text.toString().trim()
+            val from = fromEditText.text.toString().trim().lowercase() // Trim extra spaces and convert to lowercase
+            val to = toEditText.text.toString().trim().lowercase()
 
             if (from.isNotEmpty() && to.isNotEmpty()) {
                 val intent = Intent(this, DriverSelectedBusActivity::class.java).apply {

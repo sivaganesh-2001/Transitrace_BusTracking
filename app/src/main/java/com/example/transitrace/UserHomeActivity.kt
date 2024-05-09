@@ -79,7 +79,7 @@ class UserHomeActivity : AppCompatActivity() {
         val from = editTextFrom.text.toString().trim().lowercase() // Trim extra spaces and convert to lowercase
         val to = editTextTo.text.toString().trim().lowercase() // Trim extra spaces and convert to lowercase
 
-        val intent = Intent(this, UserSelectedBusListActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         intent.putExtra("from", from)
         intent.putExtra("to", to)
         startActivity(intent)

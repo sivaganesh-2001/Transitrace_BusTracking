@@ -35,15 +35,25 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
         loginButton.setOnClickListener {
-            val email = findViewById<EditText>(R.id.etmail).text.toString()
+            val emailOrPhoneNumber = findViewById<EditText>(R.id.etmail).text.toString()
             val password = findViewById<EditText>(R.id.etpassword).text.toString()
 
-            if (email.isNotEmpty() && password.isNotEmpty()) {
-                loginUser(email, password)
+            if (emailOrPhoneNumber.isNotEmpty() && password.isNotEmpty()) {
+                if (isEmail(emailOrPhoneNumber)) {
+                    // User login
+                    loginUser(emailOrPhoneNumber, password)
+                } else {
+                    // Driver login
+                    signInWithPhoneNumberAndPassword(emailOrPhoneNumber, password)
+                }
             } else {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun isEmail(text: String): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(text).matches()
     }
 
     private fun loginUser(email: String, password: String) {
@@ -53,8 +63,7 @@ class LoginActivity : AppCompatActivity() {
                     val user = auth.currentUser
                     if (user != null) {
                         // Save email to SharedPreferences
-                        saveEmailToSharedPreferences(email) // Ensure this is being called
-                        Log.d("LoginActivity", "Email saved to SharedPreferences: $email") // Log the saved email
+                        saveEmailToSharedPreferences(email)
                         // Check if the user exists in the "user" collection
                         val userRef = database.child("users").child(user.uid)
                         userRef.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -63,43 +72,11 @@ class LoginActivity : AppCompatActivity() {
                                     // User exists in the "user" collection, navigate to UserHomeActivity
                                     navigateToUserHomeActivity()
                                 } else {
-                                    // Check if the user exists in the "driver" collection
-                                    val driverRef = database.child("driver").child(user.uid)
-                                    driverRef.addListenerForSingleValueEvent(object : ValueEventListener {
-                                        override fun onDataChange(driverSnapshot: DataSnapshot) {
-                                            if (driverSnapshot.exists()) {
-                                                // User exists in the "driver" collection, navigate to DriverHomeActivity
-                                                navigateToDriverHomeActivity()
-                                            } else {
-                                                // Check if the user exists in the "admin" collection
-                                                val adminRef = database.child("admin").child(user.uid)
-                                                adminRef.addListenerForSingleValueEvent(object : ValueEventListener {
-                                                    override fun onDataChange(adminSnapshot: DataSnapshot) {
-                                                        if (adminSnapshot.exists()) {
-                                                            // User exists in the "admin" collection, navigate to AdminDriverCreateActivity
-                                                            navigateToAdminDriverCreateActivity()
-                                                        } else {
-                                                            // User not found in any collection
-                                                            Toast.makeText(
-                                                                this@LoginActivity, "User not found ",
-                                                                Toast.LENGTH_SHORT
-                                                            ).show()
-                                                        }
-                                                    }
-
-                                                    override fun onCancelled(error: DatabaseError) {
-                                                        // Handle database error
-                                                        Log.e("UserData", "Error retrieving admin data: ${error.message}")
-                                                    }
-                                                })
-                                            }
-                                        }
-
-                                        override fun onCancelled(error: DatabaseError) {
-                                            // Handle database error
-                                            Log.e("UserData", "Error retrieving driver data: ${error.message}")
-                                        }
-                                    })
+                                    // User not found in "user" collection
+                                    Toast.makeText(
+                                        this@LoginActivity, "User not found ",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                 }
                             }
 
@@ -126,17 +103,42 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun navigateToAdminDriverCreateActivity() {
-        // Navigate to AdminDriverCreateActivity
-        startActivity(Intent(this, AdminHomeActivity::class.java))
-        finish()
-    }
-
     private fun navigateToUserHomeActivity() {
         val intent = Intent(this, UserHomeActivity::class.java)
         startActivity(intent)
         finish() // Finish LoginActivity so that it's not in the back stack
     }
+
+    private fun signInWithPhoneNumberAndPassword(phoneNumber: String, password: String) {
+        val userRef = database.child("driver").orderByChild("Phone").equalTo(phoneNumber)
+        userRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (userSnapshot in dataSnapshot.children) {
+                        val storedPassword =   userSnapshot.child("Password").getValue(String::class.java)
+                        if (storedPassword == password) {
+                            // Authentication successful
+                            saveEmailToSharedPreferences(phoneNumber)
+                            navigateToDriverHomeActivity()
+                            return
+                        }
+                    }
+                }
+                // Authentication failed
+                Toast.makeText(
+                    this@LoginActivity, "Invalid phone number or password",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Handle database error
+                Log.e("LoginActivity", "Error retrieving user data: ${databaseError.message}")
+            }
+        })
+    }
+
+
 
     private fun navigateToDriverHomeActivity() {
         val intent = Intent(this, DriverHomeActivity::class.java)

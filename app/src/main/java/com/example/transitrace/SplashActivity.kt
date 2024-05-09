@@ -24,8 +24,12 @@ class SplashActivity : AppCompatActivity() {
             val email = getEmailFromSharedPreferences()
 
             if (email.isNotEmpty()) {
-                // User email is saved, navigate to the appropriate screen based on the saved email
-                navigateToHomeScreen()
+                if(isEmail(email)){
+                    // User email is saved, navigate to the appropriate screen based on the saved email
+                    navigateToHomeScreen()
+                }else {
+                    navigateToDriverHomeActivity()                }
+
             } else {
                 // No email saved, navigate to LoginActivity
                 navigateToLogin()
@@ -49,5 +53,13 @@ class SplashActivity : AppCompatActivity() {
         // Navigate to LoginActivity
         startActivity(Intent(this, WelcomeActivity::class.java))
         finish() // Finish SplashActivity so that it's not in the back stack
+    }
+    private fun isEmail(text: String): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(text).matches()
+    }
+    private fun navigateToDriverHomeActivity() {
+        val intent = Intent(this, DriverHomeActivity::class.java)
+        startActivity(intent)
+        finish() // Finish LoginActivity so that it's not in the back stack
     }
 }

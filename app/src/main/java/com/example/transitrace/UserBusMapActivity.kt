@@ -39,6 +39,7 @@ class UserBusMapActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // Get the busKey from the intent
         busKey = intent.getStringExtra("busKey") ?: ""
+//        Toast.makeText(this, busKey.toString(), Toast.LENGTH_SHORT).show()
 
         // Get the reference to the "live_location" subcollection
         liveLocationRef = FirebaseDatabase.getInstance().getReference("live_track_bus").child(busKey).child("live_location")
