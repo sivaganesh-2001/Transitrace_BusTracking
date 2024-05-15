@@ -4,6 +4,8 @@
     import android.view.LayoutInflater
     import android.view.View
     import android.view.ViewGroup
+    import android.widget.TextView
+    import android.widget.Toast
     import androidx.fragment.app.Fragment
     import androidx.recyclerview.widget.LinearLayoutManager
     import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +19,7 @@
         private lateinit var databaseRef: DatabaseReference
         private lateinit var databaseRef1: DatabaseReference
         private lateinit var databaseRef2: DatabaseReference
+
         private var from: String = ""
         private var to: String = ""
         val busList = mutableListOf<BusData>()
@@ -73,7 +76,7 @@
                         .addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 if (!snapshot.exists()) {
-                                    // No buses available
+                                    Toast.makeText(context, "No Buses available", Toast.LENGTH_SHORT).show();
                                 } else {
                                     // Clear existing data
                                     busList.clear()
@@ -99,7 +102,6 @@
                                         }
                                     }
                                     recyclerView.adapter = BusAdapter(busList) { }
-
                                 }
                             }
 
@@ -124,7 +126,7 @@
                         .addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 if (!snapshot.exists()) {
-                                    // No buses available
+                                    Toast.makeText(context, "No Running Buses", Toast.LENGTH_SHORT).show();
                                 } else {
                                     // Clear existing data
                                     busList.clear()

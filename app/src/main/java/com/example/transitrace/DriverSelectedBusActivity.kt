@@ -64,9 +64,18 @@ class DriverSelectedBusActivity : AppCompatActivity() {
                                         }
                                     }
                                 }
+                                recyclerView.adapter = BusAdapter(busList) { busKey: String ->
+                                    // Correctly obtain the context
+                                    val context = this@DriverSelectedBusActivity
+                                    val intent = Intent(context, DriverTrackBusRequest::class.java).apply {
+                                        putExtra("busKey", busKey)
+                                        // Assuming you want to pass the entire BusData object
+                                        // If you only need specific properties, adjust accordingly
+                                        putExtra("busData", busKey) // Example: passing the busKey as a string representation of BusData
+                                    }
+                                    startActivity(intent)
+                                }
 
-                                // Update RecyclerView adapter
-                                recyclerView.adapter = BusAdapter(busList) {}
                             }
                         }
 

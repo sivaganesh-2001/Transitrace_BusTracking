@@ -46,11 +46,7 @@ class UserHomeActivity : AppCompatActivity() {
         popupMenu.menuInflater.inflate(R.menu.menu, popupMenu.menu)
         popupMenu.setOnMenuItemClickListener { item ->
             when (item.itemId) {
-                R.id.sos -> {
-                    startActivity(Intent(this, EmergencySosActivity::class.java))
-                    true // Return true to consume the click event
 
-                }
                 R.id.feedback -> {
                     // Handle account profile action
                     startActivity(Intent(this, UserFeedback::class.java))

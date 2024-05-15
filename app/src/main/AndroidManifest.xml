@@ -18,14 +18,23 @@
         android:theme="@style/Theme.Transitrace"
         tools:targetApi="31">
         <activity
-            android:name=".DriverTrackBusRequest"
+            android:name=".trackingthebus"
             android:exported="false" />
         <activity
-            android:name=".driverbustrack"
+            android:name=".DriverTrackBusRequest"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+        <activity
+            android:name=".MainFrame"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".DriverSelectedBusActivity"
             android:exported="false" />
@@ -38,18 +47,12 @@
         <activity
             android:name=".SplashActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".UserComplaintActivity"
             android:exported="false" />
-        <activity
-            android:name=".UserEmergency"
-            android:exported="false" />
+
         <activity
             android:name=".UserFeedback"
             android:exported="false" />
