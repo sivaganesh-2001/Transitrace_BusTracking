@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
         val loginButton = findViewById<MaterialButton>(R.id.btnlogin)
         signupButton.setOnClickListener {
             // Start SignupActivity when the TextView is clicked
-            val intent = Intent(this, UserSignupActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
         loginButton.setOnClickListener {
@@ -48,6 +48,14 @@ class LoginActivity : AppCompatActivity() {
                 }
             } else {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                if (emailOrPhoneNumber.isEmpty()) {
+                    findViewById<EditText>(R.id.etmail).error = "Please enter your email or phone number"
+                    return@setOnClickListener
+                }
+                else if (password.isEmpty()) {
+                    findViewById<EditText>(R.id.etpassword).error = "Please enter your password"
+                    return@setOnClickListener
+                }
             }
         }
     }
@@ -104,7 +112,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun navigateToUserHomeActivity() {
-        val intent = Intent(this, UserHomeActivity::class.java)
+        val intent = Intent(this, MainFrame::class.java)
         startActivity(intent)
         finish() // Finish LoginActivity so that it's not in the back stack
     }

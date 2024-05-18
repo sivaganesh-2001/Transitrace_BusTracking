@@ -28,7 +28,7 @@ class WelcomeActivity : AppCompatActivity() {
         // Set click listener for the sign up button
         btnsignup.setOnClickListener {
             // Navigate to SignUpActivity
-            val intent = Intent(this, UserSignupActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
     }

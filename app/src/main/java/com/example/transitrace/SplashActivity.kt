@@ -45,7 +45,7 @@ class SplashActivity : AppCompatActivity() {
         // Navigate to the appropriate screen based on the saved email
         // For example, you can navigate to UserHomeActivity or DriverHomeActivity here
         // Replace UserHomeActivity::class.java with your actual home screen activity
-        startActivity(Intent(this, UserHomeActivity::class.java))
+        startActivity(Intent(this, MainFrame::class.java))
         finish() // Finish SplashActivity so that it's not in the back stack
     }
 

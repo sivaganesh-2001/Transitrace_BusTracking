@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
 <resources>
+
+
+
+    <color name="btnblue">#63a1f3</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#2A3CA1</color>
@@ -25,4 +32,20 @@
     <color name="text_color">#000000</color>
     <color name="button_bg_color">#FF5722</color>
     <color name="button_text_color">#FFFFFF</color>
+
+    <color name="black_grey">#3C3C3C</color>
+    <color name="white_transparent">#00FFFFFF</color>
+    <color name="green">#364839</color>
+    <color name="light_green">#498553</color>
+    <color name="green_grey">#E9F3ED</color>
+
+    <color name="light_grey">#f6f6f6</color>
+    <color name="grey">#676767</color>
+    <color name="grey3">#9F9F9F</color>
+    <color name="light_grey2">#DBDBDB</color>
+
+    <color name="grey_50">#CCCCCC</color>
+    <color name="grey2">#C1C1C1</color>
+    <color name="greyish_blue">#5d687e</color>
+    <color name="transparent_grey">#70676767</color>
 </resources>

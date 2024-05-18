@@ -59,7 +59,7 @@
             >
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/button2"
+                android:id="@+id/clear"
                 android:layout_width="149dp"
                 android:layout_height="49dp"
                 android:layout_marginLeft="20dp"
@@ -70,7 +70,7 @@
 
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/button"
+                android:id="@+id/submit"
                 android:layout_width="149dp"
                 android:layout_height="49dp"
                 android:layout_marginLeft="70dp"

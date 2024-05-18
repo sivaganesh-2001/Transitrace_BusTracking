@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CDE0FD"
+>
+
+
+    <ScrollView
+        android:id="@+id/sv_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/horizontal_guideline"
+                android:paddingTop="@dimen/padding_normal_900"
+                android:paddingBottom="@dimen/padding_normal_500">
+
+                <TextView
+                    android:id="@+id/tvLabelSignup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/futur"
+                    android:text="Sign Up"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_normal_100"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_profile_image"
+                    android:layout_width="177dp"
+                    android:layout_height="139dp"
+                    android:layout_marginTop="@dimen/margin_normal_200"
+                    android:background="@color/light_grey"
+                    android:padding="@dimen/padding_small_50"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/busgif"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLabelSignup"
+                    app:layout_constraintWidth_percent="0.3"
+                    app:shapeAppearanceOverlay="@style/roundImage"
+                    app:strokeColor="@color/light_green"
+                    app:strokeWidth="1dp" />
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rlNameBox"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal_200"
+                    android:background="@drawable/shape_email_pass"
+                    android:padding="@dimen/padding_normal_100"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_profile_image">
+
+                    <ImageView
+                        android:id="@+id/ivName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_person_outline" />
+
+                    <EditText
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_normal_100"
+                        android:layout_toRightOf="@+id/ivName"
+                        android:background="@null"
+                        android:fontFamily="@font/futura_medium"
+                        android:hint="Enter Full Name"
+                        android:inputType="text"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColorHint="@color/grey"
+                        android:textSize="@dimen/font_small_115" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlEmailBox"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal_100"
+                    android:background="@drawable/shape_email_pass"
+                    android:padding="@dimen/padding_normal_100"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rlNameBox">
+
+                    <ImageView
+                        android:id="@+id/ivEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_email" />
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_normal_100"
+                        android:layout_toRightOf="@+id/ivEmail"
+                        android:background="@null"
+                        android:fontFamily="@font/futura_medium"
+                        android:hint="Enter Email"
+                        android:inputType="textEmailAddress"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColorHint="@color/grey"
+                        android:textSize="@dimen/font_small_115"
+
+                        />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlMobileNumber"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal_100"
+                    android:background="@drawable/shape_email_pass"
+                    android:padding="@dimen/padding_normal_100"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rlEmailBox">
+
+                    <ImageView
+                        android:id="@+id/ivMobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_phone_outline" />
+
+                    <EditText
+                        android:id="@+id/etMobileNum"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_normal_100"
+                        android:layout_toRightOf="@+id/ivMobile"
+                        android:background="@null"
+                        android:fontFamily="@font/futura_medium"
+                        android:hint="Enter Mobile Number"
+                        android:inputType="numberDecimal"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColorHint="@color/grey"
+                        android:textSize="@dimen/font_small_115" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlPasswordBox"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal_100"
+                    android:background="@drawable/shape_email_pass"
+                    android:padding="@dimen/padding_normal_120"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rlMobileNumber">
+
+                    <ImageView
+                        android:id="@+id/ivPasswordLock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_lock" />
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_normal_100"
+                        android:layout_toLeftOf="@id/ivEye"
+                        android:layout_toRightOf="@+id/ivPasswordLock"
+                        android:background="@null"
+                        android:fontFamily="@font/futura_medium"
+                        android:hint="Enter Password"
+                        android:inputType="textPassword"
+                        android:paddingEnd="@dimen/padding_small_50"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColorHint="@color/grey"
+                        android:textSize="@dimen/font_small_115" />
+
+                    <ImageView
+                        android:id="@+id/ivEye"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_eye" />
+
+
+                </RelativeLayout>
+
+                <RadioGroup
+                    android:id="@+id/rg_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal_150"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rlPasswordBox">
+
+
+                    <RadioButton
+                        android:id="@+id/rb_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal_200"
+                        app:buttonTint="@color/light_green"
+                        android:checked="true"
+                        android:text="Male"
+                        android:background="@null"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rb_vendor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_normal_200"
+                        app:buttonTint="@color/light_green"
+                        android:text="Female"
+                        android:background="@null"
+                        android:textColor="@color/black" />
+
+
+                </RadioGroup>
+
+                <RelativeLayout
+                    android:id="@+id/rlStore"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal_100"
+                    android:background="@drawable/shape_email_pass"
+                    android:padding="@dimen/padding_normal_100"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rg_type">
+
+                    <ImageView
+                        android:id="@+id/ivStore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_address" />
+
+                    <EditText
+                        android:id="@+id/etStore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_normal_100"
+                        android:layout_toRightOf="@+id/ivStore"
+                        android:background="@null"
+                        android:fontFamily="@font/futura_medium"
+                        android:hint="Enter Store Name"
+                        android:inputType="textEmailAddress"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColorHint="@color/grey"
+                        android:textSize="@dimen/font_small_115"
+
+                        />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlAddress"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal_100"
+                    android:background="@drawable/shape_email_pass"
+                    android:padding="@dimen/padding_normal_100"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rlStore">
+
+                    <ImageView
+                        android:id="@+id/ivAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_store" />
+
+                    <EditText
+                        android:id="@+id/etAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_normal_100"
+                        android:layout_toRightOf="@+id/ivAddress"
+                        android:background="@null"
+                        android:fontFamily="@font/futura_medium"
+                        android:hint="Enter Store Address"
+                        android:inputType="textEmailAddress"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColorHint="@color/grey"
+                        android:textSize="@dimen/font_small_115"
+
+                        />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlPinLocation"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal_100"
+                    android:background="@drawable/shape_email_pass"
+                    android:padding="@dimen/padding_normal_100"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rlAddress">
+
+                    <ImageView
+                        android:id="@+id/ivPinLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_location" />
+
+                    <EditText
+                        android:id="@+id/etPinLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_normal_100"
+                        android:layout_toRightOf="@+id/ivPinLocation"
+                        android:background="@null"
+                        android:fontFamily="@font/futura_medium"
+                        android:hint="Choose Pin Location"
+                        android:inputType="textEmailAddress"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColorHint="@color/grey"
+                        android:textSize="@dimen/font_small_115"
+
+                        />
+
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btnSignup"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large_100"
+                    android:elevation="2dp"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/futur"
+                    android:paddingVertical="@dimen/padding_normal_100"
+                    android:text="Sign Up"
+                    android:textSize="@dimen/font_small_150"
+                    android:textStyle="bold"
+                    android:backgroundTint="#3D6EAF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rlPinLocation" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,7 +32,14 @@ class HomeFragment : Fragment() {
         val buttonReset = view.findViewById<Button>(R.id.buttonReset)
 
         buttonSubmit.setOnClickListener {
-            navigateToBusListActivity(editTextFrom.text.toString().trim().lowercase(), editTextTo.text.toString().trim().lowercase())
+            // Validation check
+            if (editTextFrom.text.toString().trim().isEmpty()) {
+                editTextFrom.error = "Please enter a starting location"
+            } else if (editTextTo.text.toString().trim().isEmpty()) {
+                editTextTo.error = "Please enter a destination"
+            } else {
+                navigateToBusListActivity(editTextFrom.text.toString().trim().lowercase(), editTextTo.text.toString().trim().lowercase())
+            }
         }
 
         buttonReset.setOnClickListener {
@@ -42,37 +49,37 @@ class HomeFragment : Fragment() {
         return view
     }
 
-    private fun showProfileMenu() {
-        val profile = requireView().findViewById<ImageView>(R.id.profile)
-        val popupMenu = PopupMenu(requireContext(), profile)
-        popupMenu.menuInflater.inflate(R.menu.menu, popupMenu.menu)
-        popupMenu.setOnMenuItemClickListener { item ->
-            when (item.itemId) {
-                R.id.sos -> {
-                    startActivity(Intent(requireContext(), EmergencySosActivity::class.java))
-                    true
-                }
-                R.id.feedback -> {
-                    startActivity(Intent(requireContext(), UserFeedback::class.java))
-                    true
-                }
-                R.id.complaint -> {
-                    startActivity(Intent(requireContext(), UserComplaintActivity::class.java))
-                    true
-                }
-                R.id.logout -> {
-                    val editor = sharedPreferences.edit()
-                    editor.clear()
-                    editor.apply()
-                    startActivity(Intent(requireContext(), LoginActivity::class.java))
-                    requireActivity().finish()
-                    true
-                }
-                else -> false
-            }
-        }
-        popupMenu.show()
-    }
+//    private fun showProfileMenu() {
+//        val profile = requireView().findViewById<ImageView>(R.id.profile)
+//        val popupMenu = PopupMenu(requireContext(), profile)
+//        popupMenu.menuInflater.inflate(R.menu.menu, popupMenu.menu)
+//        popupMenu.setOnMenuItemClickListener { item ->
+//            when (item.itemId) {
+//                R.id.sos -> {
+//                    startActivity(Intent(requireContext(), EmergencySosActivity::class.java))
+//                    true
+//                }
+//                R.id.feedback -> {
+//                    startActivity(Intent(requireContext(), UserFeedback::class.java))
+//                    true
+//                }
+//                R.id.complaint -> {
+//                    startActivity(Intent(requireContext(), UserComplaintActivity::class.java))
+//                    true
+//                }
+//                R.id.logout -> {
+//                    val editor = sharedPreferences.edit()
+//                    editor.clear()
+//                    editor.apply()
+//                    startActivity(Intent(requireContext(), LoginActivity::class.java))
+//                    requireActivity().finish()
+//                    true
+//                }
+//                else -> false
+//            }
+//        }
+//        popupMenu.show()
+//    }
 
     private fun navigateToBusListActivity(from: String, to: String) {
         val intent = Intent(requireContext(), MainActivity::class.java)

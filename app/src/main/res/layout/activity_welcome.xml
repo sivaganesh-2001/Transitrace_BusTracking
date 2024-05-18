@@ -20,32 +20,31 @@
 
     <Button
         android:id="@+id/btnlogin"
-        android:layout_marginTop="60dp"
         android:layout_width="300dp"
-        android:layout_height="70dp"
+        android:layout_height="56dp"
         android:layout_gravity="center"
-        android:text="LOGIN"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/blue1"
         android:clickable="true"
-        android:backgroundTint="@color/dark_bluee"
         android:drawablePadding="8dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
+        android:text="LOGIN"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        />
+        android:textSize="18sp" />
 
 
     <Button
         android:id="@+id/btnsignup"
-        android:layout_marginTop="15dp"
         android:layout_width="300dp"
-        android:layout_height="70dp"
+        android:layout_height="57dp"
         android:layout_gravity="center"
-        android:backgroundTint="@color/dark_bluee"
-        android:text="SIGN UP"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/blue1"
         android:drawablePadding="8dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
+        android:text="SIGN UP"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
 

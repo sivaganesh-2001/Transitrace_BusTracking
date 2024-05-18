@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:visibility="visible"
-    android:background="@color/light_navy_blue">
+    android:background="@color/white"
+   >
 
     <LinearLayout
         android:id="@+id/elevated"
@@ -70,7 +71,7 @@
         android:layout_width="108dp"
         android:layout_height="44dp"
         android:layout_gravity="center"
-        android:backgroundTint="@color/dark_bluee"
+        android:backgroundTint="#1A237E"
         android:text="Track"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
