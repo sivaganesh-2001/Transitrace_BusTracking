@@ -17,9 +17,9 @@
                 android:title="Complaints"/>
 
             <item
-                android:id="@+id/nav_emergency"
+                android:id="@+id/nav_feedback"
                 android:icon="@drawable/bx_error"
-                android:title="Emergency"/>
+                android:title="Feedback"/>
 
             <item
                 android:id="@+id/nav_about"
